@@ -1,0 +1,27 @@
+<!-- spotify_app/templates/spotify_app/top_combined.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Tracks and Artists</title>
+</head>
+<body>
+    <h1>Your Top Tracks and Artists</h1>
+
+    <h2>Top Tracks</h2>
+    <ul>
+        {% for track in tracks %}
+            <li>{{ track.name }} by {{ track.artists.0.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Top Artists</h2>
+    <ul>
+        {% for artist in artists %}
+            <li>{{ artist.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- spotify_app/templates/spotify_app/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify App</title>
+</head>
+<body>
+    <h1>Welcome to the Spotify App</h1>
+    <p>This is the main page of your Spotify app. Use the links below to explore your top tracks and top artists:</p>
+
+    <ul>
+        <li><a href="{% url 'login' %}">Login with Spotify</a></li>
+        <li><a href="{% url 'top_combined' %}">View Top Tracks and Artists</a></li> <!-- Updated link for combined view -->
+    </ul>
+</body>
+</html>
