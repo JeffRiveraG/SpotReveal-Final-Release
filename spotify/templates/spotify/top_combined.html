@@ -23,5 +23,19 @@
             <li>{{ artist.name }}</li>
         {% endfor %}
     </ul>
+
+    {% if playlist_url %}
+        <h2>Recommended Playlist</h2>
+        <p>Check out your personalized playlist: <a href="{{ playlist_url }}" target="_blank">Listen on Spotify</a></p>
+    {% endif %}
+
+    {% if recommendations %}
+        <h2>Recommended Tracks</h2>
+        <ul>
+            {% for track in recommendations.tracks %}
+                <li>{{ track.name }} by {{ track.artists.0.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 </body>
 </html>
