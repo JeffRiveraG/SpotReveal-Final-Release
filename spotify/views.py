@@ -4,10 +4,8 @@ from django.shortcuts import render, redirect
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 from .models import SpotifyUser
+from .credentials import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI
 
-SPOTIPY_CLIENT_ID = '4eb37ee19dd14e2796b4619a9470b0a0'
-SPOTIPY_CLIENT_SECRET = 'ec957ceb84b54da9b3ccecde98ce59f4'
-SPOTIPY_REDIRECT_URI = 'http://localhost:8000/callback'
 SPOTIPY_SCOPE = 'user-top-read playlist-modify-public playlist-read-private'
 
 sp_oauth = SpotifyOAuth(SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI, scope=SPOTIPY_SCOPE)
