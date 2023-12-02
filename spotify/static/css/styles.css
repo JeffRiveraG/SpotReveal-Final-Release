@@ -1,0 +1,68 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #272727;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    color: #1ED760;
+}
+
+.two-columns {
+    display: flex;
+    justify-content: center; /* Center the columns horizontally */
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px; /* Add margin between columns for spacing */
+}
+
+.column ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column ol li {
+    counter-increment: track;
+    margin-bottom: 10px;
+}
+
+.column ol li:before {
+    content: counter(track) ". ";
+}
+
+.button-link,
+.playlist_button,
+.logout_button {
+    text-decoration: none;
+    color: #272727;
+}
+
+.button-link button,
+.playlist_button button,
+.logout_button button {
+    margin: 10px auto; /* Center the button horizontally */
+    width: fit-content;
+    border: 1px solid #1ED760;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    background-color: #272727;
+}
+
+.button-link button:hover,
+.playlist_button button:hover,
+.logout_button button:hover {
+    background: #1ED760;
+}
+

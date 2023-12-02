@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 from .models import SpotifyUser
+from django.contrib import messages
 
 SPOTIPY_CLIENT_ID = '4eb37ee19dd14e2796b4619a9470b0a0'
 SPOTIPY_CLIENT_SECRET = 'ec957ceb84b54da9b3ccecde98ce59f4'
@@ -18,6 +19,17 @@ def index(request):
 def login(request):
     auth_url = sp_oauth.get_authorize_url()
     return redirect(auth_url)
+
+def logout(request):
+    # Clear the session to log the user out
+    request.session.clear()
+    
+    # Clear browser cookies
+    response = redirect('login')
+    response.delete_cookie('your_spotify_token_cookie')  # Replace 'your_spotify_token_cookie' with the actual name of the Spotify token cookie
+    
+    messages.success(request, 'You have been successfully logged out.')
+    return response
 
 def callback(request):
     code = request.GET.get('code', '')

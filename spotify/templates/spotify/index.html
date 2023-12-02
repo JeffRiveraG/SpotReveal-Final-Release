@@ -5,15 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify App</title>
+    <title>SpotReveal</title>
+
+    <!-- Load static tag -->
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <h1>Welcome to the Spotify App</h1>
-    <p>This is the main page of your Spotify app. Use the links below to explore your top tracks and top artists:</p>
-
-    <ul>
-        <li><a href="{% url 'login' %}">Login with Spotify</a></li>
-        <li><a href="{% url 'top_combined' %}">View Top Tracks and Artists</a></li> <!-- Updated link for combined view -->
-    </ul>
+    <div class="center">
+        <h1>SpotReveal</h1>
+        <p>Check out what your favorite tracks are and who is your favorite artist! Also take a look at songs we think you would like based on your favorite tracks</p>
+        <ul>
+            <li>
+                <a href="{% url 'login' %}" class="button-link">
+                    <button type="button">Login with Spotify</button>
+                </a>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

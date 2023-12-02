@@ -6,36 +6,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Tracks and Artists</title>
+
+    <!-- Load static tag -->
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <h1>Your Top Tracks and Artists</h1>
+    <div class="center">
+        <h1>Your Top Tracks and Artists</h1>
 
-    <h2>Top Tracks</h2>
-    <ul>
-        {% for track in tracks %}
-            <li>{{ track.name }} by {{ track.artists.0.name }}</li>
-        {% endfor %}
-    </ul>
+        <div class="two-columns">
+            <div class="column">
+                <h2>Top Tracks</h2>
+                <ol>
+                    {% for track in tracks %}
+                        <li>{{ track.name }} by {{ track.artists.0.name }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
 
-    <h2>Top Artists</h2>
-    <ul>
-        {% for artist in artists %}
-            <li>{{ artist.name }}</li>
-        {% endfor %}
-    </ul>
+            <div class="column">
+                <h2>Top Artists</h2>
+                <ol>
+                    {% for artist in artists %}
+                        <li>{{ artist.name }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
 
-    {% if playlist_url %}
-        <h2>Recommended Playlist</h2>
-        <p>Check out your personalized playlist: <a href="{{ playlist_url }}" target="_blank">Listen on Spotify</a></p>
-    {% endif %}
-
-    {% if recommendations %}
-        <h2>Recommended Tracks</h2>
+        {% if playlist_url %}
+            <h2>Recommended Playlist</h2>
+            <a href="{{ playlist_url }}" class="playlist_button" target="_blank">
+                <button type="button">Listen to Playlist</button>
+            </a>
+        {% endif %}
+        
+        <!-- Logout Button -->
         <ul>
-            {% for track in recommendations.tracks %}
-                <li>{{ track.name }} by {{ track.artists.0.name }}</li>
-            {% endfor %}
+            <li><a href="{% url 'logout' %}" class="logout_button">Logout</a></li>
         </ul>
-    {% endif %}
+    </div>
 </body>
 </html>
