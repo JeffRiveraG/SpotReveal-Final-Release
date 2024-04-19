@@ -12,3 +12,7 @@ The front page asks the user to log in and a brief description of the web app's 
 After logging in the web app will reveal your personal top artists and top tracks that you have been listening to over the last 6 months.
 The web app will also allow you to click and listen to a curated playlist based on your favorite tracks. This function opens a separate tab to the Spotify web player allowing you to listen 
 to your new playlist. It can be accessed whenever the user wants to see the curated playlist on the web player.
+
+# Things to add
+* Need to add a database to let users access the website :P
+* Fix up the website - It is very barebones at the moment
