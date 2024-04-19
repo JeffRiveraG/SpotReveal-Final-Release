@@ -1,4 +1,4 @@
-# SpotReveal
+# SpotReveal - WORK IN PROGRESS
 How to run the program
 
 1. You need to install Django onto your computer, we recommend downloading it on your terminal: python -m pip install Django.
